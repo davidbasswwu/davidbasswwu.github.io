@@ -1,6 +1,6 @@
 # AI Website Owners/Managers with Screenshots and Focus Areas
 
-This file lists AI-related university websites, along with the best available information about who manages or owns the site (committee, CIO, web team, etc.), their primary focus area, and a screenshot thumbnail.
+This file lists some of the AI-related university websites grouped by their primary focus area as of June 2025.
 
 ## Core Machine Learning & Deep Learning
 
