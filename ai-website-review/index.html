@@ -1,364 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>University AI Homepage Focus Areas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Website Owners/Managers with Screenshots and Focus Areas</title>
   <style>
-    body {font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; background: #fafafa; color: #222;}
-    header {background: #222; color: #fff; padding: 1.5rem 1rem; text-align: center;}
-    header h1 {margin: 0 0 0.5rem 0; font-size: 1.8rem;}
-    header p {margin: 0; font-size: 0.9rem; opacity: 0.8;}
-    section {padding: 1rem 1.5rem;}
-    h2 {margin-top: 2rem; margin-bottom: 1rem; font-size: 1.4rem; border-bottom: 2px solid #007acc; padding-bottom: 0.4rem;}
-    .site-grid {display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;}
-    .card {background: #fff; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.15s ease-in;}
-    .card:hover {transform: translateY(-4px);}
-    .card img {
-        display: block; 
-        width: 100%;
-       height: auto;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.6;
     }
-    .info {padding: 0.75rem;}
-    .info a {text-decoration: none; color: #007acc; font-weight: 600; word-break: break-all;}
-    .tag {display: inline-block; margin-top: 6px; background: #007acc; color: #fff; border-radius: 4px; padding: 2px 6px; font-size: 0.72rem;}
-    .intro {padding: 1rem 1.5rem;}
-    .callout { 
-        padding: 1rem 1.5rem; 
-        background: #efefef; 
-        border-radius: 6px;
-        margin: 1rem 0;
-      }
-      .callout:before {
-        content: "💡 ";
-      }
-
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .description {
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 30px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-left: 4px solid #3498db;
+      border-radius: 4px;
+    }
+    
+    h2 {
+      color: #2c3e50;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      border-bottom: 2px solid #e74c3c;
+      font-size: 1.5em;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    th {
+      background: #34495e;
+      color: white;
+      padding: 15px 12px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+    
+    tr:hover {
+      background: #f8f9fa;
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .url-cell {
+      min-width: 200px;
+    }
+    
+    .url-cell a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+      word-break: break-all;
+    }
+    
+    .url-cell a:hover {
+      color: #2980b9;
+      text-decoration: underline;
+    }
+    
+    .screenshot-cell {
+      width: 300px;
+      text-align: center;
+    }
+    
+    .screenshot-cell img {
+      max-width: 100%;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      object-fit: cover;
+    }
+    
+    .owner-cell {
+      min-width: 200px;
+      font-size: 0.9em;
+    }
+    
+    .notes-cell {
+      min-width: 200px;
+      font-size: 0.9em;
+      color: #666;
+    }
+    
+    .focus-cell {
+      min-width: 120px;
+      font-size: 0.9em;
+      font-weight: 500;
+    }
+    
+    .section-count {
+      font-size: 0.8em;
+      color: #7f8c8d;
+      font-weight: normal;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>University AI Homepage Focus Areas</h1>
-    <p>Categorized by primary and secondary research foci &mdash; June 2025.</p>
-  </header>
-
-  <div class="intro">
-    o3 Prompt:  Analyze the list of homepage URLs, and group/categorize them by their primary and secondary foci.   Put the results in a web page, and also add a screenshot of each homepage. 
-    Here is a <a target="_blank" href="https://davidbass.any.org/university-ai-homepage-analysis">different analysis done by Claude 3.7 Sonnet</a> in May 2025.
-    <br>
-    <div class="callout">
-      The AI subdomain for Emory and Michigan is for Academic Innovation. 
+  <div class="container">
+    <h1>AI Website Owners/Managers with Screenshots and Focus Areas</h1>
+    
+    <div class="description">
+      This file lists some of the AI-related university websites grouped by their primary focus area as of June 2025.
     </div>
+    
+    <h2>Core Machine Learning &amp; Deep Learning <span class="section-count">(6 sites)</span></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>Screenshot</th>
+          <th>Owner/Manager</th>
+          <th>Notes</th>
+          <th>Secondary Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="url-cell"><a href="https://ai.cmu.edu" target="_blank">ai.cmu.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.cmu.edu.png" alt="CMU AI screenshot" /></td>
+          <td class="owner-cell">Carnegie Mellon AI Initiative; Computing Services; University Communications</td>
+          <td class="notes-cell">Academic initiative with computing services and communications support</td>
+          <td class="focus-cell">Vision &amp; Robotics</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.stanford.edu" target="_blank">ai.stanford.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.stanford.edu.png" alt="Stanford AI screenshot" /></td>
+          <td class="owner-cell">Stanford Artificial Intelligence Laboratory (SAIL); Computer Science Department; Stanford Communications</td>
+          <td class="notes-cell">Academic lab with department and communications support</td>
+          <td class="focus-cell">Vision &amp; Human-Centered AI</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.utoronto.ca" target="_blank">ai.utoronto.ca</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.utoronto.ca.png" alt="Toronto AI screenshot" /></td>
+          <td class="owner-cell">University of Toronto AI Initiative; Faculty of Arts &amp; Science; Department of Computer Science; central IT services</td>
+          <td class="notes-cell">Academic leadership with faculty and IT support</td>
+          <td class="focus-cell">NLP</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.berkeley.edu" target="_blank">ai.berkeley.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.berkeley.edu.png" alt="Berkeley AI screenshot" /></td>
+          <td class="owner-cell">Berkeley Artificial Intelligence Research Lab (BAIR); Information Technology; Office of Strategic Communication</td>
+          <td class="notes-cell">Academic lab with IT and strategic communications support</td>
+          <td class="focus-cell">Applications &amp; Vision</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://bair.berkeley.edu" target="_blank">bair.berkeley.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/bair.berkeley.edu.png" alt="BAIR screenshot" /></td>
+          <td class="owner-cell">Berkeley Artificial Intelligence Research Lab (BAIR); Information Technology; Office of Strategic Communication</td>
+          <td class="notes-cell">Academic lab with IT and strategic communications support</td>
+          <td class="focus-cell">Vision &amp; Robotics</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.northwestern.edu" target="_blank">ai.northwestern.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.northwestern.edu.png" alt="Northwestern AI screenshot" /></td>
+          <td class="owner-cell">Northwestern AI Initiative; Information Technology; University Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications support</td>
+          <td class="focus-cell">Data Science</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h2>Computer Vision &amp; Robotics <span class="section-count">(6 sites)</span></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>Screenshot</th>
+          <th>Owner/Manager</th>
+          <th>Notes</th>
+          <th>Secondary Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="url-cell"><a href="https://ai.princeton.edu" target="_blank">ai.princeton.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.princeton.edu.png" alt="Princeton AI screenshot" /></td>
+          <td class="owner-cell">Princeton AI Initiative; Information Technology; University Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications collaboration</td>
+          <td class="focus-cell">Core ML</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.cornell.edu" target="_blank">ai.cornell.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.cornell.edu.png" alt="Cornell AI screenshot" /></td>
+          <td class="owner-cell">Cornell AI Initiative; Information Technology; University Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications collaboration</td>
+          <td class="focus-cell">Applications</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.gatech.edu" target="_blank">ai.gatech.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.gatech.edu.png" alt="Georgia Tech AI screenshot" /></td>
+          <td class="owner-cell">Georgia Tech AI Initiative; Office of Information Technology; Institute Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications support</td>
+          <td class="focus-cell">Robotics</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.duke.edu" target="_blank">ai.duke.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.duke.edu.png" alt="Duke AI screenshot" /></td>
+          <td class="owner-cell">Duke AI Initiative; Office of Information Technology (OIT); Duke Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications collaboration</td>
+          <td class="focus-cell">Core ML</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.upenn.edu" target="_blank">ai.upenn.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.upenn.edu.png" alt="UPenn AI screenshot" /></td>
+          <td class="owner-cell">UPenn AI Initiative; Information Technology; University Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications collaboration</td>
+          <td class="focus-cell">Robotics</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://vision.ai.illinois.edu" target="_blank">vision.ai.illinois.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/vision.ai.illinois.edu.png" alt="Illinois Vision screenshot" /></td>
+          <td class="owner-cell">Computer Vision Group, Department of Computer Science; University of Illinois System IT; University Communications</td>
+          <td class="notes-cell">Academic department with system IT and communications support</td>
+          <td class="focus-cell">Core Vision Research</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h2>Natural Language Processing &amp; Data Science <span class="section-count">(6 sites)</span></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>Screenshot</th>
+          <th>Owner/Manager</th>
+          <th>Notes</th>
+          <th>Secondary Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="url-cell"><a href="https://ai.yale.edu" target="_blank">ai.yale.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.yale.edu.png" alt="Yale AI screenshot" /></td>
+          <td class="owner-cell">Office of the Provost AI Initiatives; IT Associate Director for Accessibility and AI Platform Services (Michael Vaughn); Yale IT; Yale College IT/Web Operations team</td>
+          <td class="notes-cell">Multi-departmental collaboration between academic leadership and IT services</td>
+          <td class="focus-cell">Ethics</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.illinois.edu" target="_blank">ai.illinois.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.illinois.edu.png" alt="Illinois AI screenshot" /></td>
+          <td class="owner-cell">University of Illinois AI Initiative; University of Illinois System IT; University Communications</td>
+          <td class="notes-cell">Academic initiative with system IT and communications support</td>
+          <td class="focus-cell">Core ML</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.unc.edu" target="_blank">ai.unc.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.unc.edu.png" alt="UNC AI screenshot" /></td>
+          <td class="owner-cell">UNC AI Initiative; Office of Information Technology; UNC Communications and Public Affairs</td>
+          <td class="notes-cell">Academic initiative supported by central IT and communications teams</td>
+          <td class="focus-cell">Health Informatics</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.ufl.edu" target="_blank">ai.ufl.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.ufl.edu.png" alt="Florida AI screenshot" /></td>
+          <td class="owner-cell">University of Florida AI Initiative; UF Information Technology; University Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications support</td>
+          <td class="focus-cell">Applications</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.asu.edu" target="_blank">ai.asu.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.asu.edu.png" alt="ASU AI screenshot" /></td>
+          <td class="owner-cell">ASU AI Initiative; University Technology Office (UTO); ASU Enterprise Technology</td>
+          <td class="notes-cell">University-wide AI initiative with technology office support</td>
+          <td class="focus-cell">Human-AI Interaction</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.osu.edu" target="_blank">ai.osu.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.osu.edu.png" alt="Ohio State AI screenshot" /></td>
+          <td class="owner-cell">Office of Technology and Digital Innovation (OTDI); AI research community; University Communications</td>
+          <td class="notes-cell">Managed by OTDI with research community and communications support</td>
+          <td class="focus-cell">Data Mining</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h2>AI Applications &amp; Interdisciplinary Focus <span class="section-count">(12 sites)</span></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>Screenshot</th>
+          <th>Owner/Manager</th>
+          <th>Notes</th>
+          <th>Secondary Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="url-cell"><a href="https://ai.psu.edu" target="_blank">ai.psu.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.psu.edu.png" alt="Penn State AI screenshot" /></td>
+          <td class="owner-cell">Penn State AI Initiative; Information Technology Services (ITS); Strategic Communications</td>
+          <td class="notes-cell">Academic initiative with central IT and communications support</td>
+          <td class="focus-cell">Data Science</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.uta.edu" target="_blank">ai.uta.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.uta.edu.png" alt="UT Arlington AI screenshot" /></td>
+          <td class="owner-cell">President's AI Council (Chair: CIO Deepika Chalemela); President's AI Task Force; Center for Artificial Intelligence and Big Data (CARIDA), College of Engineering; Information Resources</td>
+          <td class="notes-cell">Strategic leadership by AI Council and Task Force with academic and IT collaboration</td>
+          <td class="focus-cell">Data Science</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.jhu.edu" target="_blank">ai.jhu.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.jhu.edu.png" alt="Johns Hopkins AI screenshot" /></td>
+          <td class="owner-cell">Johns Hopkins AI Initiative; Information Technology; Communications and Public Affairs</td>
+          <td class="notes-cell">Academic initiative with IT and communications collaboration</td>
+          <td class="focus-cell">Medical AI</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.usc.edu" target="_blank">ai.usc.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.usc.edu.png" alt="USC AI screenshot" /></td>
+          <td class="owner-cell">USC AI Initiative; Information Technology Services (ITS); University Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications collaboration</td>
+          <td class="focus-cell">Human-AI Interaction</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.uic.edu" target="_blank">ai.uic.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.uic.edu.png" alt="UIC AI screenshot" /></td>
+          <td class="owner-cell">UIC AI Advisory Group; Information Technology; Office of Strategic Marketing and Communications</td>
+          <td class="notes-cell">Advisory group governance with IT and communications support</td>
+          <td class="focus-cell">Data Science</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://www.usu.edu/ai/" target="_blank">usu.edu/ai</a></td>
+          <td class="screenshot-cell"><img src="screenshots/usu.edu_ai.png" alt="Utah State AI screenshot" /></td>
+          <td class="owner-cell">Utah State University AI Initiative; Information Technology; University Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications collaboration</td>
+          <td class="focus-cell">Agriculture</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.appstate.edu" target="_blank">ai.appstate.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.appstate.edu.png" alt="App State AI screenshot" /></td>
+          <td class="owner-cell">App State AI Initiative; Information Technology; University Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications collaboration</td>
+          <td class="focus-cell">Education</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.dartmouth.edu" target="_blank">ai.dartmouth.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.dartmouth.edu.png" alt="Dartmouth AI screenshot" /></td>
+          <td class="owner-cell">Dartmouth AI Initiative; Information Technology; University Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications collaboration</td>
+          <td class="focus-cell">Cognitive Science</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.uga.edu" target="_blank">ai.uga.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.uga.edu.png" alt="UGA AI screenshot" /></td>
+          <td class="owner-cell">UGA AI Initiative; Information Technology; University Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications collaboration</td>
+          <td class="focus-cell">Agriculture</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.umbc.edu" target="_blank">ai.umbc.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.umbc.edu.png" alt="UMBC AI screenshot" /></td>
+          <td class="owner-cell">UMBC AI Initiative; Information Technology; University Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications collaboration</td>
+          <td class="focus-cell">Cybersecurity</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.umaine.edu" target="_blank">ai.umaine.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.umaine.edu.png" alt="Maine AI screenshot" /></td>
+          <td class="owner-cell">University of Maine AI Initiative; Information Technologies; University Communications</td>
+          <td class="notes-cell">Academic initiative with IT and communications support</td>
+          <td class="focus-cell">Environment</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.utah.edu" target="_blank">ai.utah.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.utah.edu.png" alt="Utah AI screenshot" /></td>
+          <td class="owner-cell">AI Leadership Team led by Chief AI Officer (Manish Parashar); University Information Technology (UIT) Web Support &amp; Usability; One-U Responsible AI Initiative</td>
+          <td class="notes-cell">Strategic leadership by Chief AI Officer with IT and academic support</td>
+          <td class="focus-cell">Visualization</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h2>AI Theory &amp; Ethics <span class="section-count">(1 site)</span></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>Screenshot</th>
+          <th>Owner/Manager</th>
+          <th>Notes</th>
+          <th>Secondary Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="url-cell"><a href="https://ai.nd.edu" target="_blank">ai.nd.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.nd.edu.png" alt="Notre Dame AI screenshot" /></td>
+          <td class="owner-cell">AI Enablement Team, Office of Information Technology, University of Notre Dame; AI Innovation Council; Notre Dame Web Team</td>
+          <td class="notes-cell">Collaboration across IT, academic, and web teams</td>
+          <td class="focus-cell">Applications</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h2>Academic Innovation <span class="section-count">(2 sites)</span></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>Screenshot</th>
+          <th>Owner/Manager</th>
+          <th>Notes</th>
+          <th>Secondary Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="url-cell"><a href="https://ai.emory.edu" target="_blank">ai.emory.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.emory.edu.png" alt="Emory AI screenshot" /></td>
+          <td class="owner-cell">Emory AI.Humanity Initiative; Emory IT; Office of Communications and Marketing</td>
+          <td class="notes-cell">Academic initiative with IT and communications support</td>
+          <td class="focus-cell">-</td>
+        </tr>
+        <tr>
+          <td class="url-cell"><a href="https://ai.umich.edu" target="_blank">ai.umich.edu</a></td>
+          <td class="screenshot-cell"><img src="screenshots/ai.umich.edu.png" alt="Michigan AI screenshot" /></td>
+          <td class="owner-cell">University of Michigan AI Initiative; Information and Technology Services (ITS); University Communications</td>
+          <td class="notes-cell">Academic initiative with central IT and communications support</td>
+          <td class="focus-cell">-</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-  <!-- Core Machine Learning & Deep Learning -->
-  <section>
-    <h2>Core Machine Learning &amp; Deep Learning</h2>
-    <div class="site-grid">
-      <!-- CMU -->
-      <div class="card">
-        <img src="screenshots/ai.cmu.edu.png" alt="ai.cmu.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.cmu.edu" target="_blank">ai.cmu.edu</a>
-          <div class="tag">Secondary: Vision &amp; Robotics</div>
-        </div>
-      </div>
-      <!-- Stanford -->
-      <div class="card">
-        <img src="screenshots/ai.stanford.edu.png" alt="ai.stanford.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.stanford.edu" target="_blank">ai.stanford.edu</a>
-          <div class="tag">Secondary: Vision &amp; Human-Centered AI</div>
-        </div>
-      </div>
-      <!-- Toronto -->
-      <div class="card">
-        <img src="screenshots/ai.utoronto.ca.png" alt="ai.utoronto.ca screenshot" />
-        <div class="info">
-          <a href="https://ai.utoronto.ca" target="_blank">ai.utoronto.ca</a>
-          <div class="tag">Secondary: NLP</div>
-        </div>
-      </div>
-      <!-- Berkeley AI -->
-      <div class="card">
-        <img src="screenshots/ai.berkeley.edu.png" alt="ai.berkeley.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.berkeley.edu" target="_blank">ai.berkeley.edu</a>
-          <div class="tag">Secondary: Applications &amp; Vision</div>
-        </div>
-      </div>
-      <!-- BAIR -->
-      <div class="card">
-        <img src="screenshots/bair.berkeley.edu.png" alt="bair.berkeley.edu screenshot" />
-        <div class="info">
-          <a href="https://bair.berkeley.edu" target="_blank">bair.berkeley.edu</a>
-          <div class="tag">Secondary: Vision &amp; Robotics</div>
-        </div>
-      </div>
-      <!-- Northwestern -->
-      <div class="card">
-        <img src="screenshots/ai.northwestern.edu.png" alt="ai.northwestern.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.northwestern.edu" target="_blank">ai.northwestern.edu</a>
-          <div class="tag">Secondary: Data Science</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Computer Vision & Robotics -->
-  <section>
-    <h2>Computer Vision &amp; Robotics</h2>
-    <div class="site-grid">
-      <!-- Princeton -->
-      <div class="card">
-        <img src="screenshots/ai.princeton.edu.png" alt="ai.princeton.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.princeton.edu" target="_blank">ai.princeton.edu</a>
-          <div class="tag">Secondary: Core ML</div>
-        </div>
-      </div>
-      <!-- Cornell -->
-      <div class="card">
-        <img src="screenshots/ai.cornell.edu.png" alt="ai.cornell.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.cornell.edu" target="_blank">ai.cornell.edu</a>
-          <div class="tag">Secondary: Applications</div>
-        </div>
-      </div>
-      <!-- Georgia Tech -->
-      <div class="card">
-        <img src="screenshots/ai.gatech.edu.png" alt="ai.gatech.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.gatech.edu" target="_blank">ai.gatech.edu</a>
-          <div class="tag">Secondary: Robotics</div>
-        </div>
-      </div>
-      <!-- Duke -->
-      <div class="card">
-        <img src="screenshots/ai.duke.edu.png" alt="ai.duke.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.duke.edu" target="_blank">ai.duke.edu</a>
-          <div class="tag">Secondary: Core ML</div>
-        </div>
-      </div>
-      <!-- UPenn -->
-      <div class="card">
-        <img src="screenshots/ai.upenn.edu.png" alt="ai.upenn.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.upenn.edu" target="_blank">ai.upenn.edu</a>
-          <div class="tag">Secondary: Robotics</div>
-        </div>
-      </div>
-      <!-- Vision Illinois -->
-      <div class="card">
-        <img src="screenshots/vision.ai.illinois.edu.png" alt="vision.ai.illinois.edu screenshot" />
-        <div class="info">
-          <a href="https://vision.ai.illinois.edu" target="_blank">vision.ai.illinois.edu</a>
-          <div class="tag">Secondary: Core Vision Research</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NLP & Data Science -->
-  <section>
-    <h2>Natural Language Processing &amp; Data Science</h2>
-    <div class="site-grid">
-      <!-- Yale -->
-      <div class="card">
-        <img src="screenshots/ai.yale.edu.png" alt="ai.yale.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.yale.edu" target="_blank">ai.yale.edu</a>
-          <div class="tag">Secondary: Ethics</div>
-        </div>
-      </div>
-      <!-- Illinois -->
-      <div class="card">
-        <img src="screenshots/ai.illinois.edu.png" alt="ai.illinois.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.illinois.edu" target="_blank">ai.illinois.edu</a>
-          <div class="tag">Secondary: Core ML</div>
-        </div>
-      </div>
-      <!-- UNC -->
-      <div class="card">
-        <img src="screenshots/ai.unc.edu.png" alt="ai.unc.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.unc.edu" target="_blank">ai.unc.edu</a>
-          <div class="tag">Secondary: Health Informatics</div>
-        </div>
-      </div>
-      <!-- Florida -->
-      <div class="card">
-        <img src="screenshots/ai.ufl.edu.png" alt="ai.ufl.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.ufl.edu" target="_blank">ai.ufl.edu</a>
-          <div class="tag">Secondary: Applications</div>
-        </div>
-      </div>
-      <!-- ASU -->
-      <div class="card">
-        <img src="screenshots/ai.asu.edu.png" alt="ai.asu.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.asu.edu" target="_blank">ai.asu.edu</a>
-          <div class="tag">Secondary: Human-AI Interaction</div>
-        </div>
-      </div>
-      <!-- Ohio State -->
-      <div class="card">
-        <img src="screenshots/ai.osu.edu.png" alt="ai.osu.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.osu.edu" target="_blank">ai.osu.edu</a>
-          <div class="tag">Secondary: Data Mining</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI Applications & Interdisciplinary -->
-  <section>
-    <h2>AI Applications &amp; Interdisciplinary Focus</h2>
-    <div class="site-grid">
-      <!-- Penn State -->
-      <div class="card">
-        <img src="screenshots/ai.psu.edu.png" alt="ai.psu.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.psu.edu" target="_blank">ai.psu.edu</a>
-          <div class="tag">Secondary: Data Science</div>
-        </div>
-      </div>
-      <!-- UT Arlington -->
-      <div class="card">
-        <img src="screenshots/ai.uta.edu.png" alt="ai.uta.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.uta.edu" target="_blank">ai.uta.edu</a>
-          <div class="tag">Secondary: Data Science</div>
-        </div>
-      </div>
-      <!-- Johns Hopkins -->
-      <div class="card">
-        <img src="screenshots/ai.jhu.edu.png" alt="ai.jhu.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.jhu.edu" target="_blank">ai.jhu.edu</a>
-          <div class="tag">Secondary: Medical AI</div>
-        </div>
-      </div>
-      <!-- USC -->
-      <div class="card">
-        <img src="screenshots/ai.usc.edu.png" alt="ai.usc.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.usc.edu" target="_blank">ai.usc.edu</a>
-          <div class="tag">Secondary: Human-AI Interaction</div>
-        </div>
-      </div>
-      <!-- UIC -->
-      <div class="card">
-        <img src="screenshots/ai.uic.edu.png" alt="ai.uic.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.uic.edu" target="_blank">ai.uic.edu</a>
-          <div class="tag">Secondary: Data Science</div>
-        </div>
-      </div>
-      <!-- Utah State -->
-      <div class="card">
-        <img src="screenshots/usu.edu_ai.png" alt="usu.edu/ai screenshot" />
-        <div class="info">
-          <a href="https://www.usu.edu/ai/" target="_blank">usu.edu/ai</a>
-          <div class="tag">Secondary: Agriculture</div>
-        </div>
-      </div>
-      <!-- App State -->
-      <div class="card">
-        <img src="screenshots/ai.appstate.edu.png" alt="ai.appstate.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.appstate.edu" target="_blank">ai.appstate.edu</a>
-          <div class="tag">Secondary: Education</div>
-        </div>
-      </div>
-      <!-- Dartmouth -->
-      <div class="card">
-        <img src="screenshots/ai.dartmouth.edu.png" alt="ai.dartmouth.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.dartmouth.edu" target="_blank">ai.dartmouth.edu</a>
-          <div class="tag">Secondary: Cognitive Science</div>
-        </div>
-      </div>
-      <!-- UGA -->
-      <div class="card">
-        <img src="screenshots/ai.uga.edu.png" alt="ai.uga.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.uga.edu" target="_blank">ai.uga.edu</a>
-          <div class="tag">Secondary: Agriculture</div>
-        </div>
-      </div>
-      <!-- UMBC -->
-      <div class="card">
-        <img src="screenshots/ai.umbc.edu.png" alt="ai.umbc.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.umbc.edu" target="_blank">ai.umbc.edu</a>
-          <div class="tag">Secondary: Cybersecurity</div>
-        </div>
-      </div>
-      <!-- Maine -->
-      <div class="card">
-        <img src="screenshots/ai.umaine.edu.png" alt="ai.umaine.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.umaine.edu" target="_blank">ai.umaine.edu</a>
-          <div class="tag">Secondary: Environment</div>
-        </div>
-      </div>
-      <!-- Utah -->
-      <div class="card">
-        <img src="screenshots/ai.utah.edu.png" alt="ai.utah.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.utah.edu" target="_blank">ai.utah.edu</a>
-          <div class="tag">Secondary: Visualization</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI Theory & Ethics -->
-  <section>
-    <h2>AI Theory &amp; Ethics</h2>
-    <div class="site-grid">
-      <!-- Notre Dame -->
-      <div class="card">
-        <img src="screenshots/ai.nd.edu.png" alt="ai.nd.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.nd.edu" target="_blank">ai.nd.edu</a>
-          <div class="tag">Secondary: Applications</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
- <!-- Academic Innovation -->
- <section>
-    <h2>Academic Innovation</h2>
-    <div class="site-grid">
-      <!-- Emory -->
-      <div class="card">
-        <img src="screenshots/ai.emory.edu.png" alt="ai.emory.edu screenshot" />
-        <div class="info">
-          <a href="https://ai.emory.edu" target="_blank">ai.emory.edu</a>
-        </div>
-      </div>
-    <!-- Michigan -->
-    <div class="card">
-      <img src="screenshots/ai.umich.edu.png" alt="ai.umich.edu screenshot" />
-      <div class="info">
-        <a href="https://ai.umich.edu" target="_blank">ai.umich.edu</a>
-      </div>
-    </div>
-  </div>
-</section>  
-
-
-
-  <footer style="text-align:center; padding:2rem 1rem; font-size:0.8rem; color:#666;">
-    Generated on 2025-06-10 &bull; Categories are approximate and based on public information available on university AI homepages.
-  </footer>
 </body>
 </html>
